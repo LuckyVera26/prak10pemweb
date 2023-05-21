@@ -90,11 +90,11 @@
                         Hasil Transpose Matriks A
                     </div>
                     <div class="card-body">
-                        <label for="htrans_b1k1">Hasil Baris 1 Kolom 1 :</label>
+                        <label for="htrans_b1k1">Hasil Baris 1:</label>
                         <input type="text" class="formcontrol" id="htrans_b1k1" placeholder="Baris 1 Kolom 1"><br>
                         <br><label for="htrans_b1k2">Hasil Baris 1 Kolom 2 :</label>
                         <input type="text" class="formcontrol" id="htrans_b1k2" placeholder="Baris 1 Kolom 2"><br>
-                        <br><label for="htrans_b1k1">Hasil Baris 2 Kolom 1 :</label>
+                        <br><label for="htrans_b1k1">Hasil Baris 2:</label>
                         <input type="text" class="formcontrol" id="htrans_b2k1" placeholder="Baris 2 Kolom 1"><br>
                         <br><label for="htrans_b2k2">Hasil Baris 2 Kolom 2 :</label>
                         <input type="text" class="formcontrol" id="htrans_b2k2" placeholder="Baris 2 Kolom 2"><br>
@@ -161,18 +161,16 @@
             var a_b2k1 = document.getElementById("a_b2k1").value;
             var a_b2k2 = document.getElementById("a_b2k2").value;
 
-            var htrans_b1k1 = a_b1k1;
-            var htrans_b1k2 = a_b2k1;
-            var htrans_b2k1 = a_b1k2;
-            var htrans_b2k2 = a_b2k2;
-
-            document.getElementById("htrans_b1k1").value = htrans_b1k1;
+            document.getElementById("htrans_b1k1").value = a_b1k1+'  '+a_b1k2;
             document.getElementById("htrans_b1k2").value = htrans_b1k2;
             document.getElementById("htrans_b2k1").value = htrans_b2k1;
             document.getElementById("htrans_b2k2").value = htrans_b2k2;
         }
 
         function tambah() {
+                //notifikasi memilih fitur tambah
+                alert("Silahkan Lihat Hasil di Pertambahan Matrik A+B");
+
             var a_b1k1 = document.getElementById("a_b1k1").value;
             var a_b1k2 = document.getElementById("a_b1k2").value;
             var a_b2k1 = document.getElementById("a_b2k1").value;
@@ -183,10 +181,10 @@
             var b_b2k2 = document.getElementById("b_b2k2").value;
 
             // masih salah
-            var htambah_b1k1 = a_b1k1 + b_b1k1;
-            var htambah_b1k2 = a_b1k2 + b_b1k2;
-            var htambah_b2k1 = a_b2k1 + b_b2k1;
-            var htambah_b2k2 = a_b2k2 + b_b2k2;
+            var htambah_b1k1 = (parseInt(a_b1k1)+parseInt(b_b1k1));
+            var htambah_b1k2 = (parseInt(a_b1k2)+parseInt(b_b1k2));
+            var htambah_b2k1 = (parseInt(a_b2k1)+parseInt(b_b2k1));
+            var htambah_b2k2 = (parseInt(a_b2k2)+parseInt(b_b2k2));
 
             document.getElementById("htambah_b1k1").value = htambah_b1k1;
             document.getElementById("htambah_b1k2").value = htambah_b1k2;
@@ -195,6 +193,9 @@
         }
 
         function kali() {
+                //notifikasi memilih fitur kali
+                alert("Silahkan Lihat Hasil di Perkalian Matrik A*B");
+
             var a_b1k1 = document.getElementById("a_b1k1").value;
             var a_b1k2 = document.getElementById("a_b1k2").value;
             var a_b2k1 = document.getElementById("a_b2k1").value;
@@ -204,10 +205,10 @@
             var b_b2k1 = document.getElementById("b_b2k1").value;
             var b_b2k2 = document.getElementById("b_b2k2").value;
 
-            var hkali_b1k1 = (a_b1k1*b_b1k1) + (a_b1k2*b_b2k1);
-            var hkali_b1k2 = (a_b1k1*b_b1k2) + (a_b1k2*b_b2k2);
-            var hkali_b2k1 = (a_b2k1*b_b1k1) + (a_b2k2*b_b2k1);
-            var hkali_b2k2 = (a_b2k1*b_b1k2) + (a_b2k2*b_b2k2);
+            var hkali_b1k1 = (parseInt(a_b1k1)*parseInt(b_b1k1)) + (parseInt(a_b1k2)*parseInt(b_b2k1));
+            var hkali_b1k2 = (parseInt(a_b1k1)*parseInt(b_b1k2)) + (parseInt(a_b1k2)*parseInt(b_b2k2));
+            var hkali_b2k1 = (parseInt(a_b2k1)*parseInt(b_b1k1)) + (parseInt(a_b2k2)*parseInt(b_b2k1));
+            var hkali_b2k2 = (parseInt(a_b2k1)*parseInt(b_b1k2)) + (parseInt(a_b2k2)*parseInt(b_b2k2));
 
             document.getElementById("hkali_b1k1").value = hkali_b1k1;
             document.getElementById("hkali_b1k2").value = hkali_b1k2;

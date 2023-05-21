@@ -95,19 +95,19 @@
 	<hr>
 			<div class="mahasiswa-form">
                 <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                    <div>
+                    <div class="form-group">
                         <label>Id Mahasiswa</label>
                         <input type="text" name="id" id="id">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label>First Name</label>
                         <input type="text" name="Fname" id="Fname">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label>Last Name</label>
                         <input type="text" name="Lname" id="Lname">
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label>Age</label>
                         <input type="text" name="age" id="age">
                     </div>
@@ -137,15 +137,15 @@
         var selectedRow = null
 
         function onFormSubmit() {
-            if (validate()) {
+	        event.preventDefault();
                 var formData = readFormData();
-                if (selectedRow == null)
-                    insertNewRecord(formData);
-                else
-                    updateRecord(formData);
-                resetForm();
+                    if (selectedRow == null){
+                        insertNewRecord(formData);
+		            } else{
+                        updateRecord(formData);
+		            }
+                        resetForm();    
             }
-        }
 
         function readFormData() {
             var formData = {};
